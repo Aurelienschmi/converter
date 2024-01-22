@@ -1,0 +1,365 @@
+:root{
+  --header: #46494C;
+  --object: #08A045;
+  --background: #FAFAFA;
+  --main: #8d99ae;
+  --shadow: #6BBF59;
+  --global: #F4F4F9;
+}
+
+
+
+body{
+  background-color: var(--global);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+
+}
+
+header{
+  text-align: center;
+  width: 100%;
+  background-color: var(--shadow);
+  padding-bottom: 1rem;
+}
+header a{
+  text-decoration: none;
+  color: black;
+}
+
+.tab {
+  overflow: hidden;
+  margin: 2rem;
+}
+
+.tab ul{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#swapButton{
+  background: transparent;
+  text-decoration: none;
+  border: none;
+}
+#swapButton:active {
+  transform: scale(0.95);
+}
+.tab button {
+  --btn-default-bg: var(--header);
+  --btn-padding: 15px 20px;
+  --btn-hover-bg: var(--header);
+  --btn-transition: .3s;
+  --btn-letter-spacing: .1rem;
+  --btn-animation-duration: 1.2s;
+  --btn-shadow-color: var(--header);
+  --hover-btn-color: var(--object);
+  --default-btn-color: #fff;
+  --font-size: 16px;
+  --font-weight: 600;
+  --font-family: Menlo,Roboto Mono,monospace;
+  margin: 1rem;
+}
+
+.tab button {
+  box-sizing: border-box;
+  padding: var(--btn-padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--default-btn-color);
+  font: var(--font-weight) var(--font-size) var(--font-family);
+  background: var(--btn-default-bg);
+  border: none;
+  cursor: pointer;
+  transition: var(--btn-transition);
+  overflow: hidden;
+}
+
+.tab button span {
+  letter-spacing: var(--btn-letter-spacing);
+  transition: var(--btn-transition);
+  box-sizing: border-box;
+  position: relative;
+  background: inherit;
+}
+
+.tab button span::before {
+  box-sizing: border-box;
+  position: absolute;
+  content: "";
+  background: inherit;
+}
+
+.tab button:hover, .ui-btn:focus {
+  background: var(--btn-hover-bg);
+}
+
+.tab button:hover span, .ui-btn:focus span {
+  color: var(--hover-btn-color);
+}
+
+.tab button:hover span::before, .ui-btn:focus span::before {
+  animation: chitchat linear both var(--btn-animation-duration);
+}
+
+@keyframes chitchat {
+  0% {
+    content: "#";
+  }
+
+  5% {
+    content: ".";
+  }
+
+  10% {
+    content: "^{";
+  }
+
+  15% {
+    content: "-!";
+  }
+
+  20% {
+    content: "#$_";
+  }
+
+  25% {
+    content: "№:0";
+  }
+
+  30% {
+    content: "#{+.";
+  }
+
+  35% {
+    content: "@}-?";
+  }
+
+  40% {
+    content: "?{4@%";
+  }
+
+  45% {
+    content: "=.,^!";
+  }
+
+  50% {
+    content: "?2@%";
+  }
+
+  55% {
+    content: "\;1}]";
+  }
+
+  60% {
+    content: "?{%:%";
+    right: 0;
+  }
+
+  65% {
+    content: "|{f[4";
+    right: 0;
+  }
+
+  70% {
+    content: "{4%0%";
+    right: 0;
+  }
+
+  75% {
+    content: "'1_0<";
+    right: 0;
+  }
+
+  80% {
+    content: "{0%";
+    right: 0;
+  }
+
+  85% {
+    content: "]>'";
+    right: 0;
+  }
+
+  90% {
+    content: "4";
+    right: 0;
+  }
+
+  95% {
+    content: "2";
+    right: 0;
+  }
+
+  100% {
+    content: "";
+    right: 0;
+  }
+}
+
+.convertbutton {
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 0.9rem 2rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 500px;
+  overflow: hidden;
+  background: var(--shadow);
+  color: white;
+  margin: 2rem;
+ }
+ 
+ .convertbutton span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+ }
+ 
+ .convertbutton:hover span {
+  color: var(--header);
+ }
+ 
+ .convertbutton::before,
+ .convertbutton::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+ }
+ 
+ .convertbutton::before {
+  content: "";
+  background: var(--header);
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+ }
+ 
+ .convertbutton:hover::before {
+  transform: translate3d(100%, 0, 0);
+ }
+ 
+.tabcontent {
+  display: none;
+  text-align: center;
+  margin : 10rem;
+  background-color: var(--main);
+}
+#presentation{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5%;
+  margin-top: 5%;
+  margin-bottom: 9%;
+  padding: 100px;
+  border-radius: 50px
+}
+p{
+  font-family: 'Roboto Mono', sans-serif;
+}
+#Longueur ,#Masses ,#Capacités ,#Monnaie{
+  margin: 20%;
+  margin-top: 5%;
+  margin-bottom: 9%;
+  padding: 100px;
+  border-radius: 50px
+}
+
+h2{  
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+}
+h3{
+  font-family: 'Roboto Mono', sans-serif;;
+  font-size: 1rem;
+}
+.input {
+  border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: #e8e8e8;
+    transition: 0.3s;
+    margin: 5%;
+ }
+
+ .input-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+ 
+ .input:focus {
+  outline-color: #e8e8e8;
+  background: #e8e8e8;
+  transition: 0.3s;
+ }
+
+select{
+  border: none;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: #e8e8e8;
+  margin: 1rem;
+  transition: 0.3s;
+}
+
+
+footer {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: var(--main);
+  display: flex;  
+  justify-content: space-around;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+
+footer div {
+  display: inline-block;
+}
+footer h2{
+  font-size: 24px;
+}
+footer img{
+  height: 50px;
+  margin: 10px;
+}
+
+@media only screen and (max-width: 700px) {
+  #Longueur, #Masses, #Capacités, #Monnaie {
+    margin: 5%;
+    margin-top: 5%;
+    margin-bottom: 9%;
+    padding: 45px;
+    border-radius: 50px;
+}
+.logo img{
+  width: 20rem;
+}
+.input-group {
+    flex-direction: column;
+  }
+
+}

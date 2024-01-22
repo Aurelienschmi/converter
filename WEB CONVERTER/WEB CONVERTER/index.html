@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./reset.css" media="all" type="text/css">
+    <link rel="stylesheet" href="style.css">
+    <title>ConversionExpress</title>
+    <link rel="icon" href="./img/logo_navigation.png" type="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto+Mono&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/logo_ConversionExpress.png" alt="logo" width="400rem" onclick="showPresentation()">
+        </div>
+        <div class="tab">
+            <ul>
+                <li><a>
+                        <button class="tablinks" onclick="allTabs(event,'Longueur')"><span>Longueur</span></button>
+                    </a></li>
+                <li><a>
+                        <button class="tablinks" onclick="allTabs(event,'Capacités')"><span>Capacités</span></button>
+                    </a></li>
+                <li><a>
+                        <button class="tablinks" onclick="allTabs(event, 'Masses')"><span>Masses</span></button>
+                    </a></li>
+                <li><a>
+                        <button class="tablinks" onclick="allTabs(event, 'Monnaie')"><span>Monnaie</span></button>
+                    </a></li>
+            </ul>
+        </div>
+
+    </header>
+
+    <div id="presentation" class="tabcontent">
+        <p>Bienvenue sur ConversionExpress, votre outil de conversion d'unités rapide et précis ! Que ce soit pour des
+            longueurs, des masses, des capacités ou des devises, notre service fonctionne en temps réel grâce à une API
+            intégrée. Transformez vos calculs en un jeu d'enfant avec ConversionExpress.</p>
+    </div>
+
+    <div id="Longueur" class="tabcontent">
+
+        <h2>Longueur</h2>
+        <div class="input-group">
+
+            <input type="number" name="value" class="input" placeholder="Type here..." id="value" />
+
+            <select name="unitchoice" id="unitchoicelongueur">
+                <option value="0" id="-">
+                    -
+                </option>
+                <option value="1" id="cm">
+                    cm
+                </option>
+                <option value="2" id="m">
+                    m
+                </option>
+                <option value="3" id="km">
+                    km
+                </option>
+            </select>
+            <button id="swapButton" class="swapButton1"><img src="./img/swap.svg" alt="swap" height="50px"></button>
+            <select name="objectchoice" id="objectchoicelongueur">
+                <option value="0" id="-">
+                    -
+                </option>
+                <option value="1" id="cm">
+                    cm
+                </option>
+                <option value="2" id="m">
+                    m
+                </option>
+                <option value="3" id="km">
+                    km
+                </option>
+            </select>
+        </div>
+        <button id="convert" class="convertbutton"><span>CONVERT</span></button>
+        <h3>Convertisseur : </h3>
+        <h3 id="result">-</h3>
+    </div>
+
+    <div id="Capacités" class="tabcontent">
+        <h2>Capacités</h2>
+        <div class="input-group">
+
+            <input type="number" name="value1" class="input" placeholder="Type here..." id="value1" />
+
+            <select name="unitchoicecapacités" id="unitchoicecapacités">
+                <option value="0" id="-">
+                    -
+                </option>
+                <option value="1" id="mL">
+                    mL
+                </option>
+                <option value="2" id="cL">
+                    cL
+                </option>
+                <option value="3" id="L">
+                    L
+                </option>
+            </select>
+            <button id="swapButton" class="swapButton2"><img src="./img/swap.svg" alt="swap" height="50px"></button>
+
+            <select name="objectchoicecapacités" id="objectchoicecapacités">
+                <option value="0" id="-">
+                    -
+                </option>
+                <option value="1" id="mL">
+                    mL
+                </option>
+                <option value="2" id="cL">
+                    cL
+                </option>
+                <option value="3" id="L">
+                    L
+                </option>
+            </select>
+        </div>
+        <button id="convert1" class="convertbutton"><span>CONVERT</span></button>
+        <h3>Convertisseur : </h3>
+        <h3 id="result1">-</h3>
+    </div>
+
+
+
+    <div id="Masses" class="tabcontent">
+        <h2>Masses</h2>
+        <div class="input-group">
+
+            <input type="number" name="value2" class="input" placeholder="Type here..." id="value2" />
+
+            <select name="unitchoicemasses" id="unitchoicemasses">
+                <option value="0" id="-">
+                    -
+                </option>
+                <option value="1" id="cg">
+                    cg
+                </option>
+                <option value="2" id="g">
+                    g
+                </option>
+                <option value="3" id="kg">
+                    kg
+                </option>
+            </select>
+            <button id="swapButton" class="swapButton3"><img src="./img/swap.svg" alt="swap" height="50px"></button>
+
+            <select name="objectchoicemasses" id="objectchoicemasses">
+                <option value="0" id="-">
+                    -
+                </option>
+                <option value="1" id="cg">
+                    cg
+                </option>
+                <option value="2" id="g">
+                    g
+                </option>
+                <option value="3" id="kg">
+                    kg
+                </option>
+            </select>
+        </div>
+
+        <button id="convert2" class="convertbutton"><span>CONVERT</span></button>
+        <h3>Convertisseur : </h3>
+        <h3 id="result2">-</h3>
+    </div>
+
+
+    <div id="Monnaie" class="tabcontent">
+        <h2>Monnaie</h2>
+        <div class="input-group">
+            <input type="number" name="money" class="input" placeholder="Type here..." id="money" />
+            <select name="moneychoice" id="moneychoice1">
+                <option value="0" id="-">
+                    -
+                </option>
+                <option value="1" id="USD">
+                    USD
+                </option>
+                <option value="2" id="EUR">
+                    EUR
+                </option>
+                <option value="3" id="YEN">
+                    YEN
+                </option>
+            </select>
+            <button id="swapButton" class="swapButton4"><img src="./img/swap.svg" alt="swap" height="50px"></button>
+
+            <select name="exchangechoice" id="moneychoice2">
+                <option value="0" id="-">
+                    -
+                </option>
+                <option value="1" id="USD">
+                    USD
+                </option>
+                <option value="2" id="Poulet">
+                    EUR
+                </option>
+                <option value="3" id="Avion">
+                    YEN
+                </option>
+            </select>
+        </div>
+        <button id="moneyconvert" class="convertbutton"><span>CONVERT</span></button>
+        <h3>Convertisseur : </h3>
+        <h3 id="resultconvert">-</h3>
+    </div>
+
+    <script src="script.js"></script>
+    <footer>
+        <div>
+            <h2>Hugo MATYLA :</h2>
+
+            <a href="https://github.com/Fenerz07" target="_blank"><img src="./img/icon_github.svg" alt="icon github"
+                    height="50px"></a>
+
+
+            <a href="https://www.linkedin.com/in/hugo-matyla-7a6a49293/" target="_blank"><img
+                    src="./img/icon_linkedin.png" alt="icon linkedin" height="50px"></a>
+
+            </a>
+        </div>
+        <div>
+            <h2>Aurélien SCHMIEDER :</h2>
+
+            <a href="https://github.com/Aurelienschmi" target="_blank"><img src="./img/icon_github.svg"
+                    alt="icon github" height="50px"></a>
+
+
+            <a href="https://www.linkedin.com/in/aurelien-schmieder-0017391ab/" target="_blank"><img
+                    src="./img/icon_linkedin.png" alt="icon linkedin" height="50px"></a>
+
+            </a>
+        </div>
+
+    </footer>
+</body>
+
+</html>
